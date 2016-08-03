@@ -33,6 +33,10 @@
 #define RRD_FILE_ERROR          3
 #define RRD_ERROR               4
 
+#define RRD_HEADER_SIZE         31
+#define DATASOURCE_VALUE_SIZE   8
+#define META_SIZE               4
+
 typedef enum { RRD_LOCAL_DOMAIN = 0, RRD_INTER_DOMAIN } rrd_domain;
 typedef enum { RRD_GAUGE = 0, RRD_ABSOLUTE, RRD_DERIVE } rrd_scale;
 typedef enum { RRD_HOST = 0, RRD_VM, RRD_SR } rrd_owner;
@@ -126,3 +130,8 @@ int             rrd_del_src(RRD_PLUGIN * plugin, RRD_SOURCE * source);
  * be called every 5 seconds by the client,
  */
 int             rrd_sample(RRD_PLUGIN * plugin);
+
+
+JSON_Value *json_for_source(RRD_SOURCE * source);
+
+JSON_Value *json_for_plugin(RRD_PLUGIN * plugin);

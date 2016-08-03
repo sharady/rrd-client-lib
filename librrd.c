@@ -81,7 +81,7 @@ invalidate(RRD_PLUGIN * plugin)
  * Generate JSON for a data source and return it as an JSON object (from
  * where it can be rendered to a string. 
  */
-static JSON_Value *
+JSON_Value *
 json_for_source(RRD_SOURCE * source)
 {
     assert(source);
@@ -148,7 +148,7 @@ json_for_source(RRD_SOURCE * source)
  * Generate JSON for a plugin. This is just a JSON object containing a
  * sub-objecy for every data source. 
  */
-static JSON_Value *
+JSON_Value *
 json_for_plugin(RRD_PLUGIN * plugin)
 {
     assert(plugin);
